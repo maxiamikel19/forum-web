@@ -17,3 +17,39 @@ main {
   height: calc(100vh - 100px);
   display: flex;
 }
+
+.main-views {
+  border: solid 1px;
+  background-color: transparent;
+  flex-grow: 1;
+  margin: 15px;
+  padding: 10px;
+}
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px;
+  width: 100%;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.box {
+  background-color: #2f54eb;
+  color: #fff;
+  font-size: 200px;
+  animation: rotateAnimation 10s infinite linear;
+  border-radius: 50%;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

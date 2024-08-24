@@ -36,6 +36,14 @@ nav.main-nav ul li {
   transition: 0.5s;
 }
 
+nav.main-nav ul li a {
+  text-decoration: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
 nav.main-nav ul li.btn-add {
   background-color: #836fff;
   color: #fff;
@@ -46,9 +54,9 @@ nav.main-nav ul li .icono {
   font-size: 22px;
 }
 
-nav.main-nav ul li:hover {
-  background-color: #6495ed;
-  color: #fff;
+nav.main-nav ul li a:hover {
+  color: #d46b08;
+  font-weight: 600;
 }
 
 nav.main-nav ul li.menu {
@@ -59,20 +67,19 @@ nav.main-nav ul li.active {
   background-color: #add8e6;
 }
 
-@keyframes rotateAnimation {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1000px) {
+  nav.main-nav {
+    background: #f00;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  nav.main-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-}
-
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: lightcoral;
-  animation: rotateAnimation 10s infinite linear;
-  border-radius: 50%;
-  padding: 20px;
+  nav.main-nav ul li .menu-label {
+    display: none;
+  }
 }

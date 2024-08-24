@@ -11,7 +11,7 @@ export const menu = [
     id: 1,
     title: "Todas as perguntas",
     icon: <QuestionOutlined />,
-    path: "/perguntas",
+    path: "/",
   },
   {
     id: 2,

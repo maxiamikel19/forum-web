@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { PlusOutlined } from "@ant-design/icons";
 import { menu } from "../../views/menu";
+import PostModal from "../modals/PostModal";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   const [selectedMenu, setSelectedMenu] = useState(null);
+  const [open, setOpen] = useState(false);
 
   let handleSelectedMenu = (item) => {
     //console.log(id);
     setSelectedMenu(item.id);
-    console.log(item.id);
+    //console.log(item.id);
+  };
+
+  const handleOpenModal = () => {
+    setOpen(true);
   };
   return (
     <nav className="main-nav">
@@ -17,7 +24,7 @@ export default function Navbar() {
         <span className="sec">42</span>
       </div>
       <ul>
-        <li className="btn-add">
+        <li className="btn-add" onClick={handleOpenModal}>
           <span className="icono">
             <PlusOutlined />
           </span>
@@ -30,11 +37,14 @@ export default function Navbar() {
             onClick={() => handleSelectedMenu(item)}
             className={selectedMenu === item.id ? "active" : "menu"}
           >
-            <span className="icono">{item.icon}</span>
-            <span>{item.title}</span>
+            <Link to={item.path}>
+              <span className="icono">{item.icon}</span>
+              <span className="menu-label">{item.title}</span>
+            </Link>
           </li>
         ))}
       </ul>
+      <PostModal open={open} setOpen={setOpen} />
     </nav>
   );
 }
