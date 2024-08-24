@@ -7,7 +7,6 @@ import {
   UserAddOutlined,
 } from "@ant-design/icons";
 import AuthModal from "../modals/AuthModal";
-import RegisterModal from "../modals/RegisterModal";
 
 export default function Header() {
   const [logged, setLogged] = useState(false);
@@ -34,7 +33,7 @@ export default function Header() {
         <div className="logout">
           <LogoutOutlined />
         </div> */}
-        <div className="login" onClick={handleOpenModalRegister}>
+        <div className="login">
           <UserAddOutlined /> <span>Register</span>
         </div>
         <div className="login" onClick={handleOpenAuthModal}>
@@ -42,7 +41,6 @@ export default function Header() {
         </div>
       </div>
       <AuthModal open={open} setOpen={setOpen} />
-      <RegisterModal open={openreg} setOpen={setOpenreg} />
     </header>
   );
 }
