@@ -19,11 +19,11 @@ main {
 }
 
 .main-views {
-  border: solid 1px;
   background-color: transparent;
   flex-grow: 1;
   margin: 15px;
   padding: 10px;
+  overflow-y: scroll;
 }
 .welcome {
   display: flex;
@@ -52,4 +52,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

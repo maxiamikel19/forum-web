@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Home from "./components/home/Home";
 import UserPosts from "./views/UserPosts";
 import UsersAnswers from "./views/UsersAnswers";
+import HomeUser from "./views/HomeUser";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <HomeUser />,
       },
       {
         path: "/minhas-perguntas",

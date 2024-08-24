@@ -1,0 +1,68 @@
+.post {
+  width: 88%;
+  border: none;
+  padding: 20px;
+  box-shadow: 2px 1px 9px 0px #c2c2c2;
+  margin: 0 auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.post h1 {
+  font-size: 16px;
+  padding: 15px 0px;
+}
+
+.post .user-perfil {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0px;
+}
+
+.post .user-perfil .user-foto {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post .user-perfil .user-foto img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.post .user-perfil .user-metadata {
+  border: none;
+}
+
+.post .user-perfil .user-metadata .name {
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 2px;
+}
+
+.post .user-perfil .user-metadata .username {
+  font-size: 14px;
+  padding: 5px 0px;
+}
+
+.post .post-text {
+  padding: 19px 0px;
+  color: #333;
+}
+
+.post .actions {
+  display: flex;
+  padding: 5px 30px;
+  gap: 20px;
+}
+
+.post .actions a {
+  text-decoration: none;
+  color: #2f4f4f;
+  font-weight: 700;
+}

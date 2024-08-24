@@ -35,7 +35,9 @@ nav.main-nav ul li {
   font-size: 17px;
   transition: 0.5s;
 }
-
+nav.main-nav ul li:hover {
+  background-color: #add8e6;
+}
 nav.main-nav ul li a {
   text-decoration: none;
   border: none;
@@ -67,19 +69,40 @@ nav.main-nav ul li.active {
   background-color: #add8e6;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   nav.main-nav {
-    background: #f00;
+    background: #d9d9d9;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    overflow-x: scroll;
   }
   nav.main-nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  nav.main-nav ul li {
+    align-items: center;
+  }
+
+  nav.main-nav ul li:hover {
+    background-color: #add8e6;
+  }
+  nav.main-nav ul li a {
+    align-items: center;
   }
   nav.main-nav ul li .menu-label {
+    display: block;
+    font-size: 12px;
+  }
+  nav {
+    height: 140px;
+  }
+  nav.main-nav .main-time {
     display: none;
   }
 }
