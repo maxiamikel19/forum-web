@@ -23,11 +23,12 @@
 }
 
 .post .post-header .header-metadata {
-  min-width: 28%;
+  min-width: 20%;
   display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin: 2px 15px;
-  padding: 24px;
-  align-items: center;
+  padding: 20px;
   justify-content: space-between;
   border: solid 1px #ddd;
   border-radius: 10px;
@@ -38,6 +39,7 @@
   color: #333;
   font-weight: 800;
 }
+
 .post .user-perfil {
   display: flex;
   gap: 15px;

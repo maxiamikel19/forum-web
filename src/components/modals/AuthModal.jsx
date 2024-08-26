@@ -1,5 +1,6 @@
 import { UploadOutlined } from "@ant-design/icons";
 import { Button, Input, Modal, Form, Upload } from "antd";
+import clienteAxios from "../../axios";
 import { useState } from "react";
 import "./AuthModal.css";
 
@@ -7,6 +8,14 @@ export default function AuthModal({ open, setOpen }) {
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
   const [changeForm, setChangeForm] = useState(1);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState(null);
+
+  const credencials = {
+    email: email,
+    password: password,
+  };
 
   const handleSetLoginForm = () => {
     setChangeForm(1);
@@ -20,10 +29,17 @@ export default function AuthModal({ open, setOpen }) {
     setOpen(false);
   };
 
-  const handleSubmitForm = async (values) => {
-    console.log(values);
-  };
+  const handleSubmitForm = async () => {
+    //e.preventDefault();
 
+    try {
+      const response = clienteAxios.post("/api/auth/login", credencials);
+      //setUser(response);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Modal
       title={
@@ -64,11 +80,11 @@ export default function AuthModal({ open, setOpen }) {
                 },
               ]}
             >
-              <Input />
+              <Input onChange={(e) => setEmail(e.target.value)} />
             </Form.Item>
 
             <Form.Item
-              label="Senha"
+              label="password"
               name={"password"}
               rules={[
                 {
@@ -77,7 +93,7 @@ export default function AuthModal({ open, setOpen }) {
                 },
               ]}
             >
-              <Input.Password />
+              <Input.Password onChange={(e) => setPassword(e.target.value)} />
             </Form.Item>
             <p>
               N&atilde;o tem conta?
