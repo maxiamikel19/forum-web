@@ -1,5 +1,5 @@
 .post {
-  width: 88%;
+  width: 80%;
   border: none;
   padding: 20px;
   box-shadow: 2px 1px 9px 0px #c2c2c2;
@@ -8,11 +8,36 @@
   margin-bottom: 20px;
 }
 
-.post h1 {
-  font-size: 16px;
-  padding: 15px 0px;
+.post .post-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
 
+.post .post-header h1 {
+  font-size: 16px;
+  padding: 15px 0px;
+  border-bottom: solid 1px #ddd;
+}
+
+.post .post-header .header-metadata {
+  min-width: 28%;
+  display: flex;
+  margin: 2px 15px;
+  padding: 24px;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1px #ddd;
+  border-radius: 10px;
+}
+
+.post .post-header .header-metadata span {
+  font-size: 13px;
+  color: #333;
+  font-weight: 800;
+}
 .post .user-perfil {
   display: flex;
   gap: 15px;
@@ -65,4 +90,19 @@
   text-decoration: none;
   color: #2f4f4f;
   font-weight: 700;
+}
+.post .actions span {
+  margin-left: 6px;
+}
+
+@media screen and (max-width: 1400px) {
+  .post .post-header .header-metadata {
+    display: block;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .post .post-header .header-metadata p {
+    margin-top: 5px;
+  }
 }
